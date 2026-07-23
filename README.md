@@ -2,6 +2,8 @@
 Output 
 <img width="1917" height="1082" alt="image" src="https://github.com/user-attachments/assets/d5886f95-2b0a-4c68-b023-cb965de1eb0d" />
 <img width="1917" height="1087" alt="Screenshot 2026-07-23 165127" src="https://github.com/user-attachments/assets/a7e9b1cc-407c-48f8-a0bc-8ceb547474bc" />
+<img width="1917" height="1090" alt="Screenshot 2026-07-23 165044" src="https://github.com/user-attachments/assets/0eb9a12b-1021-4112-b00b-631cc84c7d87" />
+<img width="1917" height="1091" alt="Screenshot 2026-07-23 164948" src="https://github.com/user-attachments/assets/ac09330b-5d8c-4995-98ef-28a7aaaa9641" />
 
 
 > **Explainable Federated Digital Twin-Based Predictive Maintenance for Smart Manufacturing**
