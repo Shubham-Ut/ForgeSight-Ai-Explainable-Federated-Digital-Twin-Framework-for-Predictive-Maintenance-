@@ -116,20 +116,7 @@ Federated vs Centralized: **< 2.1% accuracy drop** with **full privacy preservat
 }
 ```
 
-## 📋 Delivery Phases
 
-| Phase | Status | Content |
-|---|---|---|
-| 1 | ✅ Complete | Architecture Design |
-| 2 | ✅ Complete | Monorepo Scaffold & Config |
-| 3 | 🔄 Next | Frontend — All 9 feature pages |
-| 4 | ⏳ | Backend — Full ML + API |
-| 5 | ⏳ | ML Pipeline — C-MAPSS models |
-| 6 | ⏳ | Federated Learning |
-| 7 | ⏳ | XAI Engine |
-| 8 | ⏳ | Digital Twin |
-| 9 | ⏳ | RAG Assistant |
-| 10 | ⏳ | Integration + Docker |
 
 ---
 
