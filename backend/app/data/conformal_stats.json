@@ -1,0 +1,8 @@
+{
+  "alpha": 0.05,
+  "n_calibration": 4392,
+  "quantiles": {
+    "q_95": 5.008369445800781
+  },
+  "empirical_coverage": 0.7981759340982642
+}

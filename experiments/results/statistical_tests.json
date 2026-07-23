@@ -1,0 +1,15 @@
+{
+  "n_runs": 5,
+  "mean_mae_rf": 3.16928993160771,
+  "mean_mae_xgb": 3.0669909477233888,
+  "mean_improvement_cycles": 0.10229898388432135,
+  "paired_t_test": {
+    "t_statistic": 2.902202490638945,
+    "p_value": 0.04402064417225942,
+    "significant": false
+  },
+  "wilcoxon_test": {
+    "statistic": 0.0,
+    "p_value": 0.0625
+  }
+}

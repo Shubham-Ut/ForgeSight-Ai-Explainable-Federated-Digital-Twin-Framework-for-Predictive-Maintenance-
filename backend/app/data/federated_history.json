@@ -1,0 +1,49 @@
+{
+  "rounds": [
+    {
+      "round_id": 1,
+      "global_accuracy": 0.65,
+      "global_loss": 0.42,
+      "global_mae": 5.864,
+      "global_r2": 0.9213,
+      "privacy_budget_epsilon": 0.24,
+      "client_count": 4
+    },
+    {
+      "round_id": 2,
+      "global_accuracy": 0.7,
+      "global_loss": 0.34,
+      "global_mae": 3.2047,
+      "global_r2": 0.9533,
+      "privacy_budget_epsilon": 0.48,
+      "client_count": 4
+    },
+    {
+      "round_id": 3,
+      "global_accuracy": 0.75,
+      "global_loss": 0.26,
+      "global_mae": 2.9484,
+      "global_r2": 0.9548,
+      "privacy_budget_epsilon": 0.72,
+      "client_count": 4
+    },
+    {
+      "round_id": 4,
+      "global_accuracy": 0.8,
+      "global_loss": 0.18,
+      "global_mae": 2.9251,
+      "global_r2": 0.9555,
+      "privacy_budget_epsilon": 0.96,
+      "client_count": 4
+    },
+    {
+      "round_id": 5,
+      "global_accuracy": 0.85,
+      "global_loss": 0.1,
+      "global_mae": 2.9222,
+      "global_r2": 0.9559,
+      "privacy_budget_epsilon": 1.2,
+      "client_count": 4
+    }
+  ]
+}

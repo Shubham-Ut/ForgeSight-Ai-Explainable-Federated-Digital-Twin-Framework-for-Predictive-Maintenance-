@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-display: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Base resets & smooth transitions */
+body {
+  background-color: #090d16;
+  color: #cbd5e1;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* Custom fine-scrollbar for precision engineering vibe */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #090d16;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Premium micro-shadows & glass effects */
+.premium-card {
+  background: #1e293b;
+  border: 1px solid #1e293b;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: all 300ms ease-in-out;
+}
+
+.premium-card-interactive {
+  background: #1e293b;
+  border: 1px solid #1e293b;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: all 300ms ease-in-out;
+}
+
+.premium-card-interactive:hover {
+  border-color: #334155;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3), 0 0 15px rgba(255, 255, 255, 0.02);
+  background: #334155;
+}
+
+.glow-subtle-emerald {
+  box-shadow: 0 0 25px rgba(34, 197, 94, 0.02);
+}
+
+.glow-subtle-amber {
+  box-shadow: 0 0 25px rgba(245, 158, 11, 0.02);
+}
+
+.glow-subtle-rose {
+  box-shadow: 0 0 25px rgba(239, 68, 68, 0.02);
+}
+
+/* Status indicator pulse animation */
+@keyframes softPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.93);
+  }
+}
+
+.pulse-indicator {
+  animation: softPulse 2.5s infinite ease-in-out;
+}
+
+/* Tab button micro-indicator */
+.active-tab-indicator {
+  position: relative;
+}
+.active-tab-indicator::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 16px;
+  background-color: #FFFFFF;
+  border-radius: 9999px;
+}
+

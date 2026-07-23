@@ -1,0 +1,6 @@
+{
+  "baseline_mae": 2.910907745361328,
+  "gaussian_noise_5pct": 3.0735538005828857,
+  "missing_values_10pct_imputed": 4.765191555023193,
+  "sensor_drift_10pct": 24.249149322509766
+}

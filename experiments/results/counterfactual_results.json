@@ -1,0 +1,14 @@
+{
+  "machine_id": "M-001",
+  "original_rul": 86.2,
+  "target_rul": 80.0,
+  "achieved_rul": 86.2,
+  "changes": [],
+  "rul_improvement": 0.0,
+  "maintenance_cost": 0.0,
+  "roi": 0.0,
+  "optimization_converged": false,
+  "optimization_iterations": 0,
+  "l1_norm": 0.0,
+  "nlp_explanation": "Optimization converged in 0 iterations. To shift RUL from 86.2 to 80.0 cycles: no actionable changes found. Achieved RUL: 86.2 cycles."
+}

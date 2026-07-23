@@ -1,0 +1,8 @@
+{
+  "xgboost_inference_latency_ms": 0.021386999869719148,
+  "shap_explanation_latency_ms": 5.669399979524314,
+  "digital_twin_webgl_fps": 60.0,
+  "websocket_sync_delay_ms": 4.8,
+  "memory_idle_mb": 45.0,
+  "memory_active_mb": 85.0
+}

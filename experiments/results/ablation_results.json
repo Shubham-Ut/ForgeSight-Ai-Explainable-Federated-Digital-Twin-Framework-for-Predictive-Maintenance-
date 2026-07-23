@@ -1,0 +1,17 @@
+{
+  "baseline_mae": 2.929638147354126,
+  "ablations": {
+    "Without Cycle Count": {
+      "mae": 8.296472549438477,
+      "mae_increase_pct": 183.19103357291254
+    },
+    "Without Spindle Temp (s4)": {
+      "mae": 2.9335403442382812,
+      "mae_increase_pct": 0.13319723078017348
+    },
+    "Without Vibration (s14)": {
+      "mae": 2.8768105506896973,
+      "mae_increase_pct": -1.8032123425256268
+    }
+  }
+}

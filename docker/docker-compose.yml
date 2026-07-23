@@ -1,0 +1,131 @@
+name: forgesight-ai
+
+services:
+  # ── Frontend ──────────────────────────────────────────────────────────────
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
+    container_name: forgesight-frontend
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    environment:
+      - VITE_API_BASE_URL=http://localhost:8000/api/v1
+      - VITE_WS_URL=ws://localhost:8000
+    networks: [forgesight-net]
+
+  # ── Backend API ───────────────────────────────────────────────────────────
+  backend:
+    build:
+      context: ../backend
+      dockerfile: Dockerfile
+    container_name: forgesight-backend
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    env_file:
+      - ../.env
+    environment:
+      - DATABASE_URL=postgresql+asyncpg://forgesight:forgesight@postgres:5432/forgesight
+      - REDIS_URL=redis://redis:6379/0
+      - ENVIRONMENT=production
+    volumes:
+      - ../ml/trained_models:/app/ml/trained_models:ro
+      - ../rag/vector_store:/app/rag/vector_store
+      - ../reports/generated:/app/reports/generated
+    networks: [forgesight-net]
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+
+  # ── FL Server ─────────────────────────────────────────────────────────────
+  fl-server:
+    build:
+      context: ../federated
+      dockerfile: Dockerfile
+    container_name: forgesight-fl-server
+    ports:
+      - "8080:8080"
+    environment:
+      - FL_SERVER_ADDRESS=0.0.0.0:8080
+      - FL_ROUNDS=50
+      - FL_NUM_CLIENTS=4
+    networks: [forgesight-net]
+    restart: unless-stopped
+
+  # ── PostgreSQL ─────────────────────────────────────────────────────────────
+  postgres:
+    image: postgres:16-alpine
+    container_name: forgesight-postgres
+    environment:
+      POSTGRES_USER: forgesight
+      POSTGRES_PASSWORD: forgesight
+      POSTGRES_DB: forgesight
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks: [forgesight-net]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U forgesight"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ── Redis ─────────────────────────────────────────────────────────────────
+  redis:
+    image: redis:7-alpine
+    container_name: forgesight-redis
+    command: redis-server --appendonly yes
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks: [forgesight-net]
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  # ── MQTT Broker ───────────────────────────────────────────────────────────
+  mqtt:
+    image: eclipse-mosquitto:2
+    container_name: forgesight-mqtt
+    ports:
+      - "1883:1883"
+      - "9001:9001"    # WebSocket port
+    volumes:
+      - ./mosquitto.conf:/mosquitto/config/mosquitto.conf
+    networks: [forgesight-net]
+
+  # ── Nginx Reverse Proxy ───────────────────────────────────────────────────
+  nginx:
+    image: nginx:alpine
+    container_name: forgesight-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - backend
+      - frontend
+    networks: [forgesight-net]
+
+networks:
+  forgesight-net:
+    driver: bridge
+
+volumes:
+  postgres-data:
+  redis-data:

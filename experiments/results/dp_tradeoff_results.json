@@ -1,0 +1,22 @@
+[
+  {
+    "sigma": 0.0,
+    "mae": 2.92,
+    "epsilon": "Infinity"
+  },
+  {
+    "sigma": 0.01,
+    "mae": 3.01,
+    "epsilon": 5.24
+  },
+  {
+    "sigma": 0.05,
+    "mae": 3.25,
+    "epsilon": 1.21
+  },
+  {
+    "sigma": 0.1,
+    "mae": 4.12,
+    "epsilon": 0.48
+  }
+]

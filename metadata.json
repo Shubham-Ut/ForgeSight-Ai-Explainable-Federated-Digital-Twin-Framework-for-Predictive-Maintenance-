@@ -1,0 +1,6 @@
+{
+  "name": "Explainable Federated Digital Twin-Based Predictive Maintenance System for Smart Manufacturing",
+  "description": "An industry-grade research platform combining Explainable AI, Federated Learning, and Digital Twin technology for smart factory predictive maintenance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Linear Regression",
+    "mae": 12.392,
+    "rmse": 15.096,
+    "r2": 0.6024,
+    "mape": 11.034,
+    "training_time": "0.25s",
+    "inference_time_ms": 0.0
+  },
+  {
+    "name": "GBDT Regressor",
+    "mae": 3.664,
+    "rmse": 5.937,
+    "r2": 0.9385,
+    "mape": 3.262,
+    "training_time": "159.76s",
+    "inference_time_ms": 0.0
+  },
+  {
+    "name": "Random Forest",
+    "mae": 2.879,
+    "rmse": 5.153,
+    "r2": 0.9537,
+    "mape": 2.564,
+    "training_time": "60.87s",
+    "inference_time_ms": 0.004
+  },
+  {
+    "name": "XGBoost (Proposed)",
+    "mae": 2.911,
+    "rmse": 4.984,
+    "r2": 0.9567,
+    "mape": 2.592,
+    "training_time": "7.16s",
+    "inference_time_ms": 0.002
+  }
+]
